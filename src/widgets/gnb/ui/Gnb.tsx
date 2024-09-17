@@ -37,23 +37,26 @@ export function Gnb() {
     useState<Array<CategoryType>>(mockCategories);
 
   return (
-    <div className="row-span-3 h-full border border-l-slate-300">
-      <div className="flex flex-col justify-center items-center h-full p-12 gap-12">
-        <Category icon={MenuIcon} name="" onClick={() => {}} />
-        <Category icon={HomeIcon} name="home" onClick={() => {}} />
-        {categories.map((category) => (
-          <Category
-            icon={CategoryItemIcon}
-            name={category.name}
-            onClick={() => {}}
-          />
-        ))}
-        <Category icon={AddIcon} name="" onClick={() => {}} />
-        <div className="flex flex-row gap-8 pt-24">
-          <button>Dark</button>
-          <button>Light</button>
+    <>
+      <div className="col-span-1 row-span-4" />
+      <div className="row-span-3 col-span-1 h-full border border-l-slate-300 fixed w-1/4">
+        <div className="flex flex-col justify-center items-center h-full p-12 gap-12">
+          <Category icon={MenuIcon} name="" onClick={() => {}} />
+          <Category icon={HomeIcon} name="home" onClick={() => {}} />
+          {categories.map((category) => (
+            <Category
+              icon={CategoryItemIcon}
+              name={category.name}
+              onClick={() => {}}
+            />
+          ))}
+          <Category icon={AddIcon} name="" onClick={() => {}} />
+          <div className="flex flex-row gap-8 pt-24">
+            <button>Dark</button>
+            <button>Light</button>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
